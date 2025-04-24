@@ -585,3 +585,55 @@ console.log(persona1.getedad());
 persona1.cambiarEdad(20);
 console.log(persona1.getedad());
 */
+
+
+//Ejercicio 19:
+class cuentaBancaria {
+    #saldo
+    constructor(nombre, contraseña, saldo) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+        this.#saldo = saldo;
+    }
+    setsaldo(nuevosaldo) {
+        this.#saldo = nuevosaldo;
+        console.log("el saldo ha siod modificado, ahora es de: " + this.#saldo);
+
+    }
+
+    getsaldo() {
+        console.log("el saldo es de: " + this.#saldo);
+
+    }
+
+    depositar(dinero) {
+        if (dinero <= 0) {
+            console.log("no se puede depositar esa cantidad, ingrese una cantidad valida");
+
+        } else {
+            this.#saldo += dinero;
+            console.log("el saldo quedo en : " + this.#saldo);
+
+        }
+    }
+
+
+    retirar(retirado) {
+        if (retirado > 0) {
+            this.#saldo -= retirado;
+            console.log("el dinero se retiro, su saldo es de: " + this.#saldo);
+            
+        }else{
+            console.log("ingrese cantidades de dinero validas");
+            
+        }
+    }
+
+}
+
+const cliente =  new cuentaBancaria("mateo", 1345, 3400);
+
+cliente.getsaldo();
+cliente.setsaldo(4000);
+cliente.depositar(500);
+cliente.retirar(200);
