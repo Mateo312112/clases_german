@@ -372,6 +372,7 @@ vehiculo.arrancar();
 
 
 //EJERCICIO 12:
+/*
 class Escuela {
 static numEstudiantes = 0;
 }
@@ -388,65 +389,199 @@ const estudiante4 = new Estudiante ("camilo", 19);
 const estudiante3 = new Estudiante ("mateo", 14);
 const estudiante2 = new Estudiante ("jose", 23);
 console.log( Escuela.numEstudiantes);
+*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//ejercicio 13:
 /*
-class persona {
-    #nombre
-    constructor(Nombre) {
-        this.#nombre = Nombre
-    }
-    caminar(){
-        console.log(`${this.#nombre} esta caminando`);
+class Cliente {
+#saldo
+constructor(saldo, nombre, apellido){
+this.#saldo = saldo
+this.nombre = nombre
+this.apellido = apellido
+}
+#calcularDescuento(){
+    console.log("calculando el descuento");
     
+}
+aplicarDescuento(){
+    this.#calcularDescuento();
+    console.log("el descuento esta aplicado");
+}
+verSaldo(){
+    console.log("el saldo es de: " + this.#saldo);
+    
+}
+}
+const cliente = new Cliente (500, "mateo", "suarez");
+cliente.aplicarDescuento();
+cliente.verSaldo();
+*/
+
+
+//Ejercicio 14:
+/*
+class producto {
+    #precio
+    constructor(precio) {
+        this.#precio = precio;
+    }
+    getprecio() {
+        return this.#precio
     }
 
-    obtenerNombre(){
-       return this.#nombre
+    setprecio(precio) {
+        if (precio > 0) {
+            this.#precio = precio;
+            console.log(`el precio es de ${this.#precio}`);
+        } else {
+            console.log("el precio es menor a 0");
+        }
+    }
+}
+const cliente = new producto (5000)
+console.log(`el precio inicial es de: ${cliente.getprecio()}`);
+cliente.setprecio(7000);
+console.log(`el precio nuevo: ${cliente.getprecio()}`);
+*/
+
+
+
+//Ejercicio 15:
+/*
+class Animal {
+    constructor(especie, patas, color) {
+        this.especie = especie;
+        this.patas = patas;
+        this.color = color;
+    }
+
+hacersonido(){
+    console.log("este animal ahce sonido");
+}
+}
+
+class Perro extends Animal{
+    constructor(especie, patas, color, raza){
+        super (especie, patas, color)
+        this.raza = raza;
+    }
+
+hacersonido(){
+    console.log("waw, waw");
+    
+}
+}
+
+class Gato extends Animal{
+    constructor(especie, patas, color, tamaño){
+        super (especie, patas, color)
+        this.tamaño = tamaño;
+    }
+
+hacersonido(){
+    console.log("miau, miau");
+    
+}
+}
+const perro = new Perro ("perro", "tinene 4 patas", "cafe", "pitbull");
+const gato = new Gato ("gato", "tinene 4 patas", "blanco", "8kg");
+perro.hacersonido();
+gato.hacersonido();
+*/
+
+
+//Ejercicio 16:
+/*
+class Vehiculo{
+    mover(){
+        console.log("el vehiculo se esta moviendo");
+        
     }
 }
 
-
-
-
-class empleado extends persona{
-#salario
-constructor(Salario, Nombre){
-    super(Nombre)
-    this.#salario = Salario;
-}
-trabajar(){
-    console.log(`${this.obtenerNombre()} esta trabajando`); 
+class Coche extends Vehiculo{
+    mover(){
+        console.log("el coche esta moviendo por el carril derecho");
+        
+    }
 }
 
-setSalario(){
-    return this.#salario = Salario
+class Bicicleta extends Vehiculo{
+    mover(){
+        console.log("la bicicleta esta en la ciclovia");
+        
+    }
 }
 
-getSalario(){
-    return this.#salario;
+const coche = new Coche();
+const bici = new Bicicleta();
+
+coche.mover();
+bici.mover();
+*/
+
+
+
+//Ejercicio 17:
+/*
+class Empleado {
+    static totalEmpleados = 0;
+    constructor(nombre){
+        this.nombre = nombre;
+        Empleado.totalEmpleados++;
+    }
+
+static mostrarEmpleados(){
+    console.log(`total de empleados ${Empleado.totalEmpleados}`)};
+}
+
+class Gerente extends Empleado{
+    constructor(nombre){
+     super(nombre)   
+    }
+};
+
+const empleado1 = new Empleado ("mateo");
+const empleado2 = new Empleado ("jose");
+const gerente1 = new Gerente ("camila");
+const gerente2 = new Gerente ("arturo");
+
+Empleado.mostrarEmpleados();
+*/
+
+
+
+//Ejercicio 18:
+/*
+class Persona{
+    #edad
+    constructor(edad){
+        this.#edad = edad
+    };
+
+    setedad(nuevaEdad){
+        this.#edad = nuevaEdad
+        console.log(`edad modificada, edad actual: ${this.#edad}`);
+        
+    }
+
+    getedad(){
+        return this.#edad
+    }
+}
+
+class Empleado extends Persona{
+
+cambiarEdad(nuevaEdad){
+    this.setedad(nuevaEdad);
 }
 }
 
+const persona1 = new Empleado (15);
+console.log(persona1.getedad());
 
-const empleado1 = new empleado (2000, "mateo")
-const persona1 = new persona ("mateo")
-persona1.caminar();
-empleado1.trabajar();
-console.log(empleado1.getSalario());
+persona1.cambiarEdad(20);
+console.log(persona1.getedad());
 */
