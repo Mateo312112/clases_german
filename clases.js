@@ -588,6 +588,7 @@ console.log(persona1.getedad());
 
 
 //Ejercicio 19:
+/*
 class cuentaBancaria {
     #saldo
     constructor(nombre, contraseña, saldo) {
@@ -637,3 +638,4 @@ cliente.getsaldo();
 cliente.setsaldo(4000);
 cliente.depositar(500);
 cliente.retirar(200);
+*/
